@@ -2820,6 +2820,129 @@ main > section:not(.hero):first-of-type {
     0 0 48px rgba(40,245,245,.65) !important;
 }
 
+
+/* Калькулятор подарков в стиле сайта */
+.gift-calculator-section{position:relative;padding:96px 0}
+.magic-gift-card{position:relative;max-width:1300px;width:100%;margin:0 auto;padding:clamp(22px,3vw,34px);border-radius:34px;overflow:hidden;background:radial-gradient(700px circle at 14% 10%,rgba(0,243,255,.12),transparent 42%),radial-gradient(720px circle at 88% 78%,rgba(255,215,0,.13),transparent 45%),rgba(7,14,28,.62);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(24px);box-shadow:0 32px 110px rgba(0,0,0,.42),inset 0 0 80px rgba(255,255,255,.025)}
+.gift-calc-header{text-align:center;margin-bottom:26px}.gift-calc-header h3{display:inline-flex;gap:10px;font-size:clamp(1.65rem,3vw,2.6rem);background:linear-gradient(90deg,var(--tech),#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.gift-calc-header p{max-width:760px;margin:12px auto 0;color:var(--muted);line-height:1.7}
+.gift-main-selector{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:24px}.gift-main-btn{cursor:pointer;padding:10px 18px;border-radius:999px;color:rgba(255,255,255,.86);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);font-size:.86rem;font-weight:800;transition:.25s ease}.gift-main-btn.active,.gift-main-btn:hover{color:#07111d;background:linear-gradient(135deg,var(--gold),var(--orange));border-color:transparent;box-shadow:0 0 28px rgba(255,190,0,.24)}
+.gift-main-product,.gift-cart-section,.gift-bonus-section,.gift-total-block{border-radius:28px;background:radial-gradient(420px circle at 20% 20%,rgba(0,243,255,.10),transparent 36%),radial-gradient(420px circle at 88% 78%,rgba(255,215,0,.11),transparent 40%),rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.14);box-shadow:0 22px 70px rgba(0,0,0,.28)}
+.gift-main-product{padding:24px;margin-bottom:20px}.gift-main-product h3,.gift-cart-title,.gift-bonus-title,.gift-products-title{color:var(--gold);font-weight:900}.gift-main-price{font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#ffe8a3;margin:10px 0}.gift-main-desc{color:rgba(255,255,255,.78);line-height:1.6}
+.gift-features,.gift-cart-items,.gift-bonus-list{display:flex;flex-wrap:wrap;gap:10px}.gift-features{margin-top:14px}.gift-features span,.gift-bonus-item,.gift-cart-item{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;color:rgba(255,255,255,.84);background:rgba(255,255,255,.065);border:1px solid rgba(255,255,255,.12);font-size:.82rem}
+.gift-cart-section,.gift-bonus-section{padding:18px;margin:18px 0;background:rgba(0,0,0,.22)}.gift-cart-title,.gift-bonus-title{margin-bottom:12px;font-size:.95rem}.gift-remove-item{cursor:pointer;border:0;background:transparent;color:#ffaaaa;font-size:1rem;padding:0 2px}
+.gift-products-title{margin:24px 0 16px;font-size:1.15rem}.gift-products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.gift-product-card{cursor:pointer;padding:20px;border-radius:26px;background:radial-gradient(320px circle at 14% 10%,rgba(0,243,255,.08),transparent 36%),rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.13);box-shadow:0 20px 66px rgba(0,0,0,.25);transition:.25s ease}.gift-product-card:hover{border-color:rgba(255,215,0,.34);box-shadow:0 24px 76px rgba(0,0,0,.32),0 0 26px rgba(255,215,0,.08)}
+.gift-product-name{font-size:1.03rem;font-weight:900;color:#ffe8a3;line-height:1.35}.gift-product-price{margin:10px 0;font-size:1.15rem;font-weight:900;color:var(--gold)}.gift-product-old-price{margin-left:8px;color:rgba(255,255,255,.42);font-size:.78rem;text-decoration:line-through}.gift-product-discount{margin-left:8px;color:var(--tech2);font-size:.78rem}.gift-product-desc{color:rgba(255,255,255,.68);font-size:.82rem;line-height:1.5}
+.gift-total-block{margin:24px 0 18px;padding:26px;text-align:center;border-color:rgba(255,215,0,.22)}.gift-total-price{margin:8px 0;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:#ffe8a3}.gift-discount-summary{color:var(--tech2);font-size:.9rem;margin-top:6px}.gift-order-btn{margin-top:18px;width:100%;cursor:pointer;border:0;border-radius:999px;padding:15px 26px;color:#07111d;font-weight:900;font-size:1rem;background:linear-gradient(135deg,var(--tech),var(--gold));box-shadow:0 0 34px rgba(0,243,255,.16),0 0 34px rgba(255,215,0,.18)}
+.gift-calc-footer{text-align:center;margin-top:16px}.gift-cta-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;color:var(--gold);text-decoration:none;border:1px solid rgba(255,215,0,.34);background:rgba(255,215,0,.06);font-weight:900}.gift-footer-note{color:rgba(255,255,255,.55);margin-top:14px;font-size:.78rem}
+@media(max-width:720px){.gift-calculator-section{padding:70px 0}.magic-gift-card{padding:18px;border-radius:26px}.gift-products-grid{grid-template-columns:1fr}}
+
+
+/* Визуальный итог набора в калькуляторе */
+.gift-final-package {
+  margin:22px 0 18px;
+  padding:24px;
+  border-radius:28px;
+  background:
+    radial-gradient(520px circle at 18% 10%, rgba(0,243,255,.12), transparent 38%),
+    radial-gradient(520px circle at 88% 90%, rgba(255,215,0,.14), transparent 42%),
+    rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:
+    0 24px 76px rgba(0,0,0,.30),
+    inset 0 0 54px rgba(255,255,255,.025);
+}
+
+.gift-final-package h4 {
+  margin:0 0 14px;
+  color:#ffe8a3;
+  font-size:1.15rem;
+  font-weight:900;
+}
+
+.gift-final-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:12px;
+}
+
+.gift-final-card {
+  padding:14px 16px;
+  border-radius:20px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.gift-final-card strong {
+  display:block;
+  color:#fff;
+  font-size:.92rem;
+  line-height:1.35;
+}
+
+.gift-final-card span {
+  display:block;
+  margin-top:5px;
+  color:rgba(255,255,255,.64);
+  font-size:.78rem;
+  line-height:1.45;
+}
+
+.gift-final-note {
+  margin-top:16px;
+  padding:14px 16px;
+  border-radius:20px;
+  color:rgba(255,255,255,.78);
+  background:rgba(0,0,0,.20);
+  border:1px solid rgba(255,255,255,.10);
+  font-size:.9rem;
+  line-height:1.65;
+}
+
+.gift-contact-buttons {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:14px;
+}
+
+.gift-contact-btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:44px;
+  padding:12px 18px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:900;
+  color:#07111d;
+  background:linear-gradient(135deg,var(--tech),var(--gold));
+  box-shadow:0 0 28px rgba(0,243,255,.14),0 0 28px rgba(255,215,0,.15);
+}
+
+.gift-contact-btn.secondary {
+  color:var(--gold);
+  background:rgba(255,215,0,.07);
+  border:1px solid rgba(255,215,0,.35);
+  box-shadow:none;
+}
+
+
+/* Единая кнопка калькулятора — ведёт только к форме сайта */
+.gift-contact-buttons {
+  justify-content:center;
+}
+
+.gift-contact-btn,
+.gift-order-btn {
+  text-align:center;
+}
+
+.gift-calc-footer {
+  display:none !important;
+}
+
 </style>
 </head>
 
@@ -2840,6 +2963,7 @@ main > section:not(.hero):first-of-type {
     <a href="#services">Услуги</a>
     <a href="#portfolio">Портфолио</a>
     <a href="#prices">Тарифы</a>
+    <a href="#gift-calculator">🎁 Калькулятор подарков</a>
     <a href="#gift">Подарки</a>
     <a href="#booking">Обсудить проект</a>
   </nav>
@@ -2975,6 +3099,37 @@ main > section:not(.hero):first-of-type {
     </div>
   </div>
 </section>
+
+<section id="gift-calculator" class="gift-calculator-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Соберите свой цифровой подарок</h2>
+      <p>Соберите уникальный набор цифровых чудес для себя или близкого человека и сразу увидьте итоговую стоимость.</p>
+    </div>
+    <div class="magic-gift-card reveal">
+      <div class="gift-calc-header">
+        <h3>🎁 Конструктор подарка</h3>
+        <p>Скомбинируйте несколько цифровых продуктов — калькулятор сам посчитает скидки, бонусы и итоговую стоимость.</p>
+      </div>
+      <div class="gift-main-selector" id="giftMainSelector"></div>
+      <div class="gift-main-product" id="giftMainProductArea"></div>
+      <div class="gift-cart-section">
+        <div class="gift-cart-title">🛒 Добавленные подарки</div>
+        <div class="gift-cart-items" id="giftCartItems"></div>
+      </div>
+      <div class="gift-bonus-section">
+        <div class="gift-bonus-title">🎁 Бесплатные бонусы к заказу:</div>
+        <div class="gift-bonus-list" id="giftBonusList"></div>
+      </div>
+      <div class="gift-products-title">✨ Добавьте ещё подарков</div>
+      <div class="gift-products-grid" id="giftProductsGrid"></div>
+      <div id="giftTotalArea"></div>
+      <div id="giftFinalPackage"></div>
+    </div>
+  </div>
+</section>
+
+
 
 
 
@@ -4208,6 +4363,66 @@ document.addEventListener('DOMContentLoaded',()=>{
   btn.addEventListener('click', () => {
     window.scrollTo({ top:0, behavior:'smooth' });
   });
+})();
+
+
+
+/* Калькулятор подарков */
+(function(){
+const root=document.getElementById('gift-calculator'); if(!root)return;
+const CONTACT_EMAIL='braytonfruchter@gmail.com';
+const CONTACT_HANDLE='@braytonfruchter';
+const PRODUCTS={coloring:{id:'coloring',name:'🎨 Персональная раскраска',price:1000,description:'10 страниц, PDF, портрет получателя',features:['Уникальный портрет','10 страниц','Скачивание сразу'],emoji:'🎨',discount:10},fairyTale:{id:'fairyTale',name:'🌙 Сказка на ночь',price:5000,description:'1500–2000 слов, PDF + аудиодемо',features:['Персональный герой','Аудиодемо 2-3 мин','Красивый макет'],emoji:'🌙',discount:15},song:{id:'song',name:'🎵 Песня + иллюстрация',price:7000,description:'2–3 минуты, авторская обложка',features:['Текст на заказ','Демо-запись с вокалом','MP3 + WAV + PNG'],emoji:'🎤',discount:20},bot:{id:'bot',name:'🤖 Telegram-бот',price:10000,description:'Бот под ключ + сценарий',features:['Меню и кнопки','База до 100 пользователей','Дизайн под бренд'],emoji:'⚡',discount:25},natalChart:{id:'natalChart',name:'🃏 Натальная карта',price:4000,description:'Персональная интерпретация, PDF',features:['По дате рождения','Мягкие интерпретации','Мини-прогноз'],emoji:'🃏',discount:12},neuroPhoto:{id:'neuroPhoto',name:'🎭 Нейрофотосессия',price:3000,description:'AI-образы, аватары, 3 варианта',features:['3 образа на выбор','Высокое разрешение','Стилизация под сказку'],emoji:'🎭',discount:10}};
+const BONUSES=[{name:'🖼️ Именная открытка',threshold:3000},{name:'🎧 Аудиодемо 30 сек',threshold:5000},{name:'📦 PDF-упаковка',threshold:2000},{name:'✨ Видео-поздравление',threshold:8000},{name:'🎁 Сертификат 5% на следующий заказ',threshold:0}];
+let selectedMainId='coloring',cartIds=[];
+const money=v=>new Intl.NumberFormat('ru-RU').format(Math.round(v))+' ₽';
+const discount=id=>PRODUCTS[id]?.discount||10;
+const cartItems=()=>cartIds.map(id=>{const p=PRODUCTS[id],d=discount(id);return {...p,discount:d,priceWithDiscount:p.price*(1-d/100)}})
+const total=()=>PRODUCTS[selectedMainId].price+cartItems().reduce((s,i)=>s+i.priceWithDiscount,0);
+function textOrder(main,items,sum,bonuses){return `Здравствуйте!\n\nЯ собрала/собрал цифровой подарок на сайте.\n\nОсновной подарок:\n${main.name} — ${money(main.price)}\n\n${items.length?'Дополнительно:\n'+items.map(i=>'• '+i.name+' — скидка '+i.discount+'%').join('\n')+'\n\n':''}Итого:\n${money(sum)}\n\nБонусы:\n${bonuses.map(b=>'• '+b.name).join('\n')||'—'}\n\nХочу обсудить детали.`}
+function contactOwner(t){
+ const subject=encodeURIComponent('Заявка на цифровой подарок');
+ const body=encodeURIComponent(t);
+ window.location.href=`mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+}
+
+function renderFinalPackage(main,items,sum,active){
+ const box=root.querySelector('#giftFinalPackage'); if(!box)return;
+ const all=[{...main,finalRole:'Основной подарок'},...items.map(i=>({...i,finalRole:'Дополнение со скидкой '+i.discount+'%'}))];
+ box.innerHTML=`<div class="gift-final-package">
+   <h4>✨ В итоге вы получите:</h4>
+   <div class="gift-final-grid">
+     ${all.map(i=>`<div class="gift-final-card"><strong>${i.name}</strong><span>${i.finalRole}<br>${i.description}</span></div>`).join('')}
+   </div>
+   <div class="gift-final-note">
+     ${items.length
+       ? `Вы собрали комплект из <b>${all.length}</b> продуктов. Все элементы можно оформить как единый персональный подарок: PDF, обложка, аудио/визуалы и бонусы по сумме заказа.`
+       : `Пока выбран один основной подарок. Добавьте ещё продукты ниже, чтобы собрать полноценный комплект и получить скидки.`}
+     <br><br><b>Бонусы:</b> ${active.map(b=>b.name).join(', ') || 'появятся при увеличении суммы заказа'}.
+   </div>
+   <div class="gift-contact-buttons"><a class="gift-contact-btn" href="#booking">✨ Заполнить форму на сайте</a></div>
+ </div>`;
+}
+
+function render(){
+ const main=PRODUCTS[selectedMainId],items=cartItems(),sum=total(),active=BONUSES.filter(b=>sum>=b.threshold);
+ root.querySelector('#giftMainProductArea').innerHTML=`<h3>${main.emoji} Ваш основной подарок</h3><div class="gift-main-price">${money(main.price)}</div><div class="gift-main-desc">${main.description}</div><div class="gift-features">${main.features.map(f=>`<span>✨ ${f}</span>`).join('')}</div>`;
+ root.querySelector('#giftCartItems').innerHTML=items.length?items.map(i=>`<div class="gift-cart-item">${i.emoji} ${i.name}<span style="font-size:.75rem;">скидка ${i.discount}% → ${money(i.priceWithDiscount)}</span><button class="gift-remove-item" data-id="${i.id}" aria-label="Удалить">✕</button></div>`).join(''):'<div style="color:rgba(255,255,255,.55);font-size:.86rem;">Пока ничего не добавлено. Выберите подарки ниже ✨</div>';
+ root.querySelectorAll('.gift-remove-item').forEach(b=>b.onclick=()=>{cartIds=cartIds.filter(id=>id!==b.dataset.id);render()});
+ root.querySelector('#giftBonusList').innerHTML=active.length?active.map(b=>`<span class="gift-bonus-item">${b.name}</span>`).join(''):'<span class="gift-bonus-item">✨ Добавьте товаров на сумму от 2000 ₽</span>';
+ const taken=[selectedMainId,...cartIds];
+ root.querySelector('#giftProductsGrid').innerHTML=Object.entries(PRODUCTS).filter(([id])=>!taken.includes(id)).map(([id,p])=>{const d=discount(id),dp=p.price*(1-d/100);return `<div class="gift-product-card" data-id="${id}"><div class="gift-product-name">${p.emoji} ${p.name}</div><div class="gift-product-price">${money(dp)}<span class="gift-product-old-price">${money(p.price)}</span><span class="gift-product-discount">-${d}%</span></div><div class="gift-product-desc">${p.description}</div><div style="font-size:.75rem;color:var(--tech2);margin-top:10px;">➕ Нажмите, чтобы добавить</div></div>`}).join('');
+ root.querySelectorAll('.gift-product-card').forEach(c=>c.onclick=()=>{if(!cartIds.includes(c.dataset.id)){cartIds.push(c.dataset.id);render()}});
+ const original=main.price+items.reduce((s,i)=>s+PRODUCTS[i.id].price,0),saved=original-sum;
+ root.querySelector('#giftTotalArea').innerHTML=`<div class="gift-total-block"><div>💰 Итого к оплате:</div><div class="gift-total-price">${money(sum)}</div>${saved>0?`<div class="gift-discount-summary">✨ Вы экономите ${money(saved)} (${Math.round(saved/original*100)}%)</div>`:''}<button class="gift-order-btn" id="giftOrderBtn">✨ Заполнить форму на сайте</button></div>`;
+ renderFinalPackage(main,items,sum,active);
+ root.querySelector('#giftOrderBtn').onclick=()=>{document.querySelector('#booking')?.scrollIntoView({behavior:'smooth',block:'start'});};
+}
+function init(){
+ const el=root.querySelector('#giftMainSelector'); el.innerHTML='';
+ Object.entries(PRODUCTS).forEach(([id,p])=>{const b=document.createElement('button');b.type='button';b.className='gift-main-btn '+(selectedMainId===id?'active':'');b.textContent=`${p.emoji} ${p.name.replace(/^[^а-яА-ЯA-Za-z0-9]+/u,'').split(' ').slice(0,2).join(' ')}`;b.onclick=()=>{selectedMainId=id;cartIds=[];init();render()};el.appendChild(b)});
+}
+init();render();
 })();
 
 </script>
